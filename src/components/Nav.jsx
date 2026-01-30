@@ -25,7 +25,7 @@ const Nav = () => {
 
         <div className="right">
             <div className="apple-icon">
-                <img src="/public/navbar-icons/wifi.svg" alt="" />
+                <img src="/navbar-icons/wifi.svg" alt="" />
             </div>
             <div className="nav-item">
                 <DateTime />
