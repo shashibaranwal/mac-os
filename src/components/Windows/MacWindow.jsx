@@ -8,7 +8,7 @@ const MacWindow = ({ children, ...props }) => {
     x: 100,
     y: 100,
     width: 400,
-    height: 250,
+    height: 350,
   };
   const finalDefault = { ...defaultProps, ...userDefault };
 
@@ -23,12 +23,14 @@ const MacWindow = ({ children, ...props }) => {
           </div>
 
           <div className="title">
-            <p>shashibaranwal - notes</p>
+            <p>{props.title}</p>
           </div>
         </div>
         <hr />
 
-        <div className="main-content">{children}</div>
+        <div className="main-content">
+          {children}
+        </div>
       </div>
     </Rnd>
   );
