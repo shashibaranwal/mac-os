@@ -1,0 +1,47 @@
+.loader{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .spinner{
+        img{
+            height: 50px;
+            width: 50px;
+            animation: zoomIn 2s ease-in-out infinite;
+        }
+
+        .loader-bar{
+            margin-top: 10px;
+            height: 2px;
+            width: 50px;
+            background-color: white;
+            animation: fillBar 2s ease-in-out;
+        }
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes fillBar {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
