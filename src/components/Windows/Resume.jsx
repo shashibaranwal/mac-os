@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MacWindow from "./MacWindow";
 import "./resume.scss";
 
-const Resume = () => {
+const Resume = ({windowName, windowsState, setWindowsState}) => {
   const [zIndex, setZIndex] = useState(null);
 
   const handleZIndex = () => {
@@ -10,7 +10,7 @@ const Resume = () => {
   };
 
   return (
-    <MacWindow
+    <MacWindow windowName={windowName} windowsState={windowsState} setWindowsState={setWindowsState}
       default={{ x: 950, y: 100, width: 400, height: 400 }}
       title="Resume"
       onClick={handleZIndex}

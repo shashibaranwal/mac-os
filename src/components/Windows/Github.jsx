@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MacWindow from "./MacWindow";
 import { getGithubData, getGithubRepos } from "../../apis/GithubApi";
 
-const Github = (props) => {
+const Github = ({windowName, windowsState, setWindowsState}) => {
   const [data, setData] = useState([]);
   const [repos, setRepos] = useState([]);
 
@@ -25,7 +25,7 @@ const Github = (props) => {
   }
 
   return (
-    <MacWindow
+    <MacWindow windowName={windowName} windowsState={windowsState} setWindowsState={setWindowsState}
       default={{ x: 100, y: 100, width: 400, height: 250 }}
       title={data.login || "Github"}
       onClick={handleZIndex}

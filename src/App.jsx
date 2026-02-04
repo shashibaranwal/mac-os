@@ -17,6 +17,16 @@ const App = () => {
       setIsLoading(false);
     }, 2000);
   }, []);
+
+  const [windowsState, setWindowsState] = useState({
+    github: false,
+    note: false,
+    resume: false,
+    youtube: false,
+    cli: false,
+  })
+
+
   return (
     <>
       {isLoading ? (
@@ -24,12 +34,12 @@ const App = () => {
       ) : (
         <main>
           <Nav />
-          <Github />
-          <Note />
-          <Resume />
-          <Youtube />
-          <Cli />
-          <Dock />
+          <Dock setWindowsState={setWindowsState} windowsState={windowsState}/>
+          {windowsState.github && <Github windowName="github" setWindowsState={setWindowsState} windowsState={windowsState}/>}
+          {windowsState.note && <Note windowName="note" setWindowsState={setWindowsState} windowsState={windowsState}/>}
+          {windowsState.resume && <Resume windowName="resume" setWindowsState={setWindowsState} windowsState={windowsState}/>}
+          {windowsState.youtube && <Youtube windowName="youtube" setWindowsState={setWindowsState} windowsState={windowsState}/>}
+          {windowsState.cli && <Cli windowName="cli" setWindowsState={setWindowsState} windowsState={windowsState}/>}
         </main>
       )}
     </>

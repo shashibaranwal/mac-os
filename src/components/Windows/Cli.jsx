@@ -1,9 +1,17 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Terminal from "react-console-emulator";
 import MacWindow from "./MacWindow";
 import "./cli.scss";
 
-const Cli = () => {
+const Cli = ({windowName, windowsState, setWindowsState}) => {
+
+  const [zIndex, setZIndex] = useState(null);
+  
+  const handleZIndex = () => {
+    setZIndex(zIndex + 1);
+  }
+
+
   const commands = {
     echo: {
       description: "Echo a passed string.",
@@ -38,9 +46,12 @@ const Cli = () => {
   };
 
   return (
-    <MacWindow
+    <MacWindow windowName={windowName} windowsState={windowsState} setWindowsState={setWindowsState}
       default={{ x: 600, y: 150, width: 450, height: 350 }}
       title="Terminal"
+
+      onClick={handleZIndex}
+      style={{ zIndex }}
     >
       <div className="cli-window">
         <Terminal className='react-console-emulator'

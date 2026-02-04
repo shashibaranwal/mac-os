@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import MacWindow from './MacWindow'
 
-const Youtube = () => {
+const Youtube = ({windowName, windowsState, setWindowsState}) => {
 
     const [zIndex, setZIndex] = useState(null);
 
@@ -10,7 +10,7 @@ const Youtube = () => {
     }
 
     return (
-    <MacWindow
+    <MacWindow windowName={windowName} windowsState={windowsState} setWindowsState={setWindowsState}
         default={{ x: 1100, y: 350, width: 320, height: 350 }}
         title={"Youtube"}
         onClick={handleZIndex}

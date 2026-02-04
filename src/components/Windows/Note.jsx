@@ -6,7 +6,7 @@ import { atelierDuneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import './note.scss'
 
-const Note = () => {
+const Note = ({windowName, windowsState, setWindowsState}) => {
   const [markdown, setMarkdown] = useState(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const [zIndex, setZIndex] = useState(null);
   };
 
   return (
-    <MacWindow 
+    <MacWindow  windowName={windowName} windowsState={windowsState} setWindowsState={setWindowsState}
     default={{ x: 300, y: 300 }}
     title="Note" onClick={handleZIndex} style={{ zIndex }}>
       <div className="note-window">
