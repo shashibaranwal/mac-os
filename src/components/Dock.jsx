@@ -51,8 +51,8 @@ const Dock = ({ setWindowsState, windowsState }) => {
         </div>
         <div 
           onClick={() => {window.open("https://www.linkedin.com/in/shashi-baranwal/", "_blank")}}
-          className="icon link">
-          <img src="/doc-icons/link.svg" alt="" />
+          className="icon linkedin">
+          <img src="/doc-icons/linkedin.svg" alt="" />
         </div>
         <div 
           onClick={() => {windows('cli')}}
